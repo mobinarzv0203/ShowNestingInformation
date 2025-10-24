@@ -39,9 +39,9 @@ function renderComments(comments) {
   for (const comment of comments) {
     const name = `<b> ${comment.name}</b>`;
     const text = `<p> ${comment.text}</p>`;
-    const children = '';
+    let children = '';
 
-    if (Array.isArray(Comment.children) && comment.children.length > 0) {
+    if (Array.isArray(comment.children) && comment.children.length > 0) {
       children = renderComments(comment.children);
     }
 
